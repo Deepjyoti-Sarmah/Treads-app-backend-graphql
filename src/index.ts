@@ -2,7 +2,6 @@ import express from 'express';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 
-
 async function init() {
     
     const app = express();
@@ -16,6 +15,9 @@ async function init() {
             type Query {
                 hello: String
                 say(name: String): String
+            }
+            type Mutation {
+                createUser
             }    
         `, //Schema 
         resolvers: {
