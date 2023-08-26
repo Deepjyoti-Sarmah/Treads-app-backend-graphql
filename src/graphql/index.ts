@@ -6,7 +6,7 @@ async function createApollowGraphServer() {
   const gqlServer = new ApolloServer({
       typeDefs: `            
               type Query {
-                ${User.queries}
+                hello: String
               }
               type Mutation {
                 ${User.mutations}
@@ -14,10 +14,10 @@ async function createApollowGraphServer() {
             `, //Schema 
       resolvers: {
           Query: {
-            ...User.resolvers.queries
+            ...User.resolvers.queries,
           },
           Mutation: {
-            ...User.resolvers.queries
+            ...User.resolvers.mutations,
           }
       }, //Resolver
   });
