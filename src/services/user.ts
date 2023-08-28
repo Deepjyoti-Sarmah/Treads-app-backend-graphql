@@ -23,6 +23,10 @@ class UserService {
     return hashedPassword;
   }
 
+  public static getUserById(id: string) {
+    return prismaClient.user.findUnique({where: {id}});
+  }
+
   public static createUser(payload:CreateUserPayload) {
     const {firstName, lastName, email, password} = payload;
     

@@ -19,9 +19,9 @@ async function init() {
       expressMiddleware(await createApollowGraphServer(),{ 
         context: async ({req}) => {
           //@ts-ignore
-          const token = req.header['token'] 
+          const token = req.headers["token"]; 
           try {
-            const user = UserService.decodeJWTToken(token);
+            const user = UserService.decodeJWTToken(token as string);
             return {user};
           } catch (error) {
             return {};
