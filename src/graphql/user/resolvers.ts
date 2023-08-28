@@ -8,7 +8,8 @@ const queries = {
     })
     return token;
   },
-  getCurrentLoggeedInUser: async() => {
+  getCurrentLoggeedInUser: async(_:any, parameters:any, context:any) => {
+    console.log(context);
     throw new Error("I dont know who are you?");
   },
 
