@@ -13,7 +13,10 @@ async function init() {
         res.json({message: 'Server is up and running'});
     })
     
-    app.use('/graphql', expressMiddleware(await createApollowGraphServer()));
+    app.use(
+      '/graphql',
+      expressMiddleware(await createApollowGraphServer(), (context: () => {}))
+    );
 
     app.listen(PORT, () => console.log(`Server started at PORT:${PORT}`));
 

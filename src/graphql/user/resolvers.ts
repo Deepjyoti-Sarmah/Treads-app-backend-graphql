@@ -7,8 +7,12 @@ const queries = {
       password: payload.password
     })
     return token;
-  } 
-}
+  },
+  getCurrentLoggeedInUser: async() => {
+    throw new Error("I dont know who are you?");
+  },
+
+};
 
 const mutations= {
     createUser: async(_: any, payload:CreateUserPayload) => {
